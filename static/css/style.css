@@ -11882,7 +11882,7 @@ section {
 .title_more_btn:hover:before {
     width: 100%
 }
-
+/* 
 .preloader {
     background-color: #eaeaea;
     background-image: url(../images/preloader.gif);
@@ -11894,7 +11894,7 @@ section {
     top: 0;
     width: 100%;
     z-index: 99999
-}
+} */
 
 .scrollToHome {
     background-color: #b331ff;
