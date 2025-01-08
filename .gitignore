@@ -174,4 +174,5 @@ settings.py
 urls.py
 migrations/
 __pycache__/
+db.sqlite3
 
