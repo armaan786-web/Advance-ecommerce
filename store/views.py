@@ -676,31 +676,67 @@ def ask_question(request):
     
         
 
-def add_to_cart(request):
-    cart_product = {}
+# def add_to_cart(request):
+#     cart_product = {}
     
 
-    cart_product[str(request.GET['id'])] = {
-        'title': request.GET['title'],
-        'qty': request.GET['qty'],
-        'price': request.GET['price'],
-        'product_slug': request.GET['product_slug'],
-        'shipping_amount': request.GET['shipping_amount'],
-        'vendor': request.GET['vendor'],
-        'shop_name': request.GET['vendor_name'],
-        'image': request.GET['image'],
-        'pid': request.GET['pid'],
-        'product_processing_fee': request.GET['product_processing_fee'],
-        'product_tax_fee': request.GET['product_tax_fee'],
-        "product_stock_qty":request.GET["product_stock_qty"],
-        "product_in_stock":request.GET["product_in_stock"],        
-        "product_vendor_slug":request.GET["product_vendor_slug"],
+#     cart_product[str(request.GET['id'])] = {
+#         'title': request.GET['title'],
+#         'qty': request.GET['qty'],
+#         'price': request.GET['price'],
+#         'product_slug': request.GET['product_slug'],
+#         'shipping_amount': request.GET['shipping_amount'],
+#         'vendor': request.GET['vendor'],
+#         'shop_name': request.GET['vendor_name'],
+#         'image': request.GET['image'],
+#         'pid': request.GET['pid'],
+#         'product_processing_fee': request.GET['product_processing_fee'],
+#         'product_tax_fee': request.GET['product_tax_fee'],
+#         "product_stock_qty":request.GET["product_stock_qty"],
+#         "product_in_stock":request.GET["product_in_stock"],        
+#         "product_vendor_slug":request.GET["product_vendor_slug"],
 
+#     }
+
+#     if 'cart_data_obj' in request.session:
+#         if str(request.GET['id']) in request.session['cart_data_obj']:
+
+#             cart_data = request.session['cart_data_obj']
+#             cart_data[str(request.GET['id'])]['qty'] = int(cart_product[str(request.GET['id'])]['qty'])
+#             cart_data.update(cart_data)
+#             request.session['cart_data_obj'] = cart_data
+#         else:
+#             cart_data = request.session['cart_data_obj']
+#             cart_data.update(cart_product)
+#             request.session['cart_data_obj'] = cart_data
+
+#     else:
+#         request.session['cart_data_obj'] = cart_product
+#     return JsonResponse({"data":request.session['cart_data_obj'], 'totalcartitems': len(request.session['cart_data_obj'])})
+
+
+def add_to_cart(request):
+    cart_product = {}
+
+    cart_product[str(request.GET['id'])] = {
+        'title': request.GET.get('title', ''),
+        'qty': request.GET.get('qty', ''),
+        'price': request.GET.get('price', ''),
+        'product_slug': request.GET.get('product_slug', ''),
+        'shipping_amount': request.GET.get('shipping_amount', ''),
+        'vendor': request.GET.get('vendor', ''),
+        'shop_name': request.GET.get('vendor_name', ''),
+        'image': request.GET.get('image', ''),
+        'pid': request.GET.get('pid', ''),
+        'product_processing_fee': request.GET.get('product_processing_fee', ''),
+        'product_tax_fee': request.GET.get('product_tax_fee', ''),
+        "product_stock_qty": request.GET.get("product_stock_qty", ''),
+        "product_in_stock": request.GET.get("product_in_stock", ''),
+        "product_vendor_slug": request.GET.get("product_vendor_slug", ''),  # Default to empty string if not found
     }
 
     if 'cart_data_obj' in request.session:
         if str(request.GET['id']) in request.session['cart_data_obj']:
-
             cart_data = request.session['cart_data_obj']
             cart_data[str(request.GET['id'])]['qty'] = int(cart_product[str(request.GET['id'])]['qty'])
             cart_data.update(cart_data)
@@ -709,10 +745,10 @@ def add_to_cart(request):
             cart_data = request.session['cart_data_obj']
             cart_data.update(cart_product)
             request.session['cart_data_obj'] = cart_data
-
     else:
         request.session['cart_data_obj'] = cart_product
-    return JsonResponse({"data":request.session['cart_data_obj'], 'totalcartitems': len(request.session['cart_data_obj'])})
+
+    return JsonResponse({"data": request.session['cart_data_obj'], 'totalcartitems': len(request.session['cart_data_obj'])})
 
 @csrf_exempt
 def cart_view(request):
