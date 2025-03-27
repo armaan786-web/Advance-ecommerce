@@ -1,0 +1,241 @@
+
+  
+
+{% extends "partials/base.html" %}
+{% load static %}
+{% block content %}    <!-- Inner Page Breadcrumb -->
+<div class="body_content_wrapper position-relative">
+    <!-- Inner Page Breadcrumb -->
+    <section class="inner_page_breadcrumb style4">
+       <div class="container">
+          <div class="row">
+             <div class="col-xl-7">
+                <div class="breadcrumb_content style4">
+                   <h2 class="breadcrumb_title">Become an Mayank Metal Art  seller</h2>
+                   <p>More than half the units sold in our stores are from independent sellers.</p> 
+                   
+                   {% if request.user.is_authenticated %}
+                   <h5 class="alert alert-warning">NOTE: By Clicking the Register button below your vendor account would be created immediately</h5>
+                   <a class="btn btn-thm signup-fildter-btn" href="{% url 'vendor:vendor-registration' %}">Register Vendor Account Now</a>
+                   {% else %}
+                   <a class="btn btn-thm signup-fildter-btn" href="{% url 'vendor:vendor-registration' %}">Sign up </a>
+                   {% endif %}
+                     
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+    <!-- Become A Vendor -->
+    <section class="our-vendor pb35">
+       <div class="container">
+          <div class="row">
+             <div class="col-lg-6 col-xl-5 offset-xl-1">
+                <div class="main-title">
+                   <h2 class="mtitle">Why become a seller on <br class="d-none d-md-block"> Mayank Metal Art ?</h2>
+                   <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit <br class="d-none d-xxl-block"> officia consequat duis enim velit mollit.</p>
+                </div>
+             </div>
+             <div class="col-lg-6 col-xl-5 offset-xl-1">
+                <div class="vendor_iconbox">
+                   <span class="icon"><img src="images/icons/parcel-box.svg" alt="parcel-box"></span>
+                   <div class="details">
+                      <h3 class="title">Free Shipping</h3>
+                      <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do <br class="d-none d-md-block"> amet sint. Velit officia consequat duis enim velit mollit.</p>
+                   </div>
+                </div>
+                <div class="vendor_iconbox">
+                   <span class="icon"><img src="images/icons/payment-card.svg" alt="payment-card"></span>
+                   <div class="details">
+                      <h3 class="title">Flexible Payment</h3>
+                      <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do <br class="d-none d-md-block"> amet sint. Velit officia consequat duis enim velit mollit.</p>
+                   </div>
+                </div>
+                <div class="vendor_iconbox">
+                   <span class="icon"><img src="images/icons/online-support.svg" alt="online-support"></span>
+                   <div class="details">
+                      <h3 class="title">Online Support</h3>
+                      <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do <br class="d-none d-md-block"> amet sint. Velit officia consequat duis enim velit mollit.</p>
+                   </div>
+                </div>
+             </div>
+          </div>
+         
+          <div class="row">
+             <div class="col-lg-6 col-xl-5 offset-xl-1">
+                <div class="main-title">
+                   <h2 class="mtitle">Over $50K in potential <br class="d-none d-md-block"> benefits</h2>
+                   <p>Ready to sell? Launch your brand today with a powerful playbook for new sellers <br class="d-none d-xxl-block"> and over $50K in potential benefits.</p>
+                </div>
+             </div>
+             <div class="col-lg-6 col-xl-5 offset-xl-1">
+                <div class="vendor_iconbox style2 d-block d-sm-flex">
+                   <span class="icon mt10 me-3"><img src="images/icons/step-1.svg" alt="step-1"></span>
+                   <div class="details ms-0 ms-sm-4 mt-2 mt-sm-0">
+                      <h3 class="title">Step 1</h3>
+                      <p>Create an account on our website. It is fast and free.</p>
+                   </div>
+                </div>
+                <div class="vendor_iconbox style2 d-block d-sm-flex">
+                   <span class="icon mt10 me-3"><img src="images/icons/step-2.svg" alt="step-2"></span>
+                   <div class="details ms-0 ms-sm-4 mt-2 mt-sm-0">
+                      <h3 class="title">Step 2</h3>
+                      <p>Upload your products.</p>
+                   </div>
+                </div>
+                <div class="vendor_iconbox style2 d-block d-sm-flex">
+                   <span class="icon mt10 me-3"><img src="images/icons/step-3.svg" alt="step-3"></span>
+                   <div class="details ms-0 ms-sm-4 mt-2 mt-sm-0">
+                      <h3 class="title">Step 3</h3>
+                      <p>We’ll verify your account and then you can start <br class="d-none d-md-block"> selling!</p>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+    <!-- Our Testimonials -->
+    <section class="our-testimonial bgc-gmart-gray">
+       <div class="container">
+          <div class="row justify-content-center">
+             <div class="col">
+                <div class="main-title text-center">
+                   <p>The review are in</p>
+                </div>
+             </div>
+          </div>
+          <div class="row">
+             <div class="col-lg-12">
+                <div class="zmart_testimonial_slider swiper mySwiper">
+                   <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                         <div class="zmart_testimonial1">
+                            <div class="review mb30 text-center">
+                               <ul>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                               </ul>
+                            </div>
+                            <div class="testimonial_contents text-center">
+                               <p class="main_title">Sallum dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu lorem dolor ipsum.</p>
+                               <p class="author">Ali Tufan</p>
+                               <p class="author_post">Fashion Designer</p>
+                            </div>
+                         </div>
+                      </div>
+                      <div class="swiper-slide">
+                         <div class="zmart_testimonial1">
+                            <div class="review mb30 text-center">
+                               <ul>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                               </ul>
+                            </div>
+                            <div class="testimonial_contents text-center">
+                               <p class="main_title">Sallum dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu lorem dolor ipsum.</p>
+                               <p class="author">Ali Tufan</p>
+                               <p class="author_post">Fashion Designer</p>
+                            </div>
+                         </div>
+                      </div>
+                      <div class="swiper-slide">
+                         <div class="zmart_testimonial1">
+                            <div class="review mb30 text-center">
+                               <ul>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                               </ul>
+                            </div>
+                            <div class="testimonial_contents text-center">
+                               <p class="main_title">Sallum dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu lorem dolor ipsum.</p>
+                               <p class="author">Ali Tufan</p>
+                               <p class="author_post">Fashion Designer</p>
+                            </div>
+                         </div>
+                      </div>
+                      <div class="swiper-slide">
+                         <div class="zmart_testimonial1">
+                            <div class="review mb30 text-center">
+                               <ul>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                               </ul>
+                            </div>
+                            <div class="testimonial_contents text-center">
+                               <p class="main_title">Sallum dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu lorem dolor ipsum.</p>
+                               <p class="author">Ali Tufan</p>
+                               <p class="author_post">Fashion Designer</p>
+                            </div>
+                         </div>
+                      </div>
+                      <div class="swiper-slide">
+                         <div class="zmart_testimonial1">
+                            <div class="review mb30 text-center">
+                               <ul>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                               </ul>
+                            </div>
+                            <div class="testimonial_contents text-center">
+                               <p class="main_title">Sallum dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu lorem dolor ipsum.</p>
+                               <p class="author">Ali Tufan</p>
+                               <p class="author_post">Fashion Designer</p>
+                            </div>
+                         </div>
+                      </div>
+                      <div class="swiper-slide">
+                         <div class="zmart_testimonial1">
+                            <div class="review mb30 text-center">
+                               <ul>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                                  <li class="list-inline-item"><a href="#"><span class="fas fa-star"></span></a></li>
+                               </ul>
+                            </div>
+                            <div class="testimonial_contents text-center">
+                               <p class="main_title">Sallum dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu lorem dolor ipsum.</p>
+                               <p class="author">Ali Tufan</p>
+                               <p class="author_post">Fashion Designer</p>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="swiper-button-next"><span class="fas fa-chevron-right"></span></div>
+                   <div class="swiper-button-prev"><span class="fas fa-chevron-left"></span></div>
+                   <div class="swiper-pagination"></div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+   
+    <!-- Our Footer -->
+    <section class="footer_one home1 bdrt1">
+      
+       <div class="container bdrt1 pt20 pb20">
+          <div class="row">
+       
+          </div>
+       </div>
+    </section>
+    <a class="scrollToHome" href="#"><i class="fas fa-angle-up"></i></a>
+ </div>
+{% endblock content %}    <!-- Inner Page Breadcrumb -->
+    
