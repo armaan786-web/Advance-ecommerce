@@ -68,12 +68,39 @@ utc=pytz.UTC
 
 
 
-def index(request):
-    addon = BasicAddon.objects.filter().first()
+# def index(request):
+#     addon = BasicAddon.objects.filter().first()
     
-    # If addon is None, provide a default object with a default value
-    if not addon:
-        addon = BasicAddon(service_fee_percentage=0)  # Default value to avoid NoneType error
+#     # If addon is None, provide a default object with a default value
+#     if not addon:
+#         addon = BasicAddon(service_fee_percentage=0)  # Default value to avoid NoneType error
+
+#     brands = Brand.objects.filter(active=True)
+#     products = Product.objects.filter(status="published", featured=True).order_by("-id")[:10]
+#     top_selling_products = Product.objects.filter(status="published").order_by("-orders")[:10]
+#     hot_deal = Product.objects.filter(status="published", hot_deal=True).first()
+#     all_products = Product.objects.filter(status="published")[:16]
+#     posts = Post.objects.filter(status="published", featured=True)
+
+#     query = request.GET.get("q")
+#     if query:
+#         products = products.filter(Q(title__icontains=query) | Q(description__icontains=query)).distinct()
+
+#     context = {
+#         "all_products": all_products,
+#         "addon": addon,  # Now addon is always an object
+#         "posts": posts,
+#         "brands": brands,
+#         "hot_deal": hot_deal,
+#         "products": products,
+#         "top_selling_products": top_selling_products,
+#     }
+
+#     return render(request, "store/index.html", context)
+
+def index(request):
+    # Ensure addon is never None by providing a default object
+    addon = BasicAddon.objects.first() or BasicAddon(service_fee_percentage=0)
 
     brands = Brand.objects.filter(active=True)
     products = Product.objects.filter(status="published", featured=True).order_by("-id")[:10]
@@ -88,7 +115,7 @@ def index(request):
 
     context = {
         "all_products": all_products,
-        "addon": addon,  # Now addon is always an object
+        "addon": addon,  # Safe to use in the template
         "posts": posts,
         "brands": brands,
         "hot_deal": hot_deal,
